@@ -12,7 +12,7 @@ then:
 
 load word / sentence definitions
 
-![word definition](https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg?raw=true | height = 100px)
+![word definition](https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg | width=100)
 
 ### press CTRL + y
 
