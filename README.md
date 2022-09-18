@@ -6,6 +6,8 @@ A chrome extension to lookup japanese words on the fly.
 
 #### **Select** some japanse text in a web page
 
+then:
+
 ### press CTRL + m
 
 load word / sentence definitions
