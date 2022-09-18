@@ -4,7 +4,7 @@ A chrome extension to lookup japanese words on the fly.
 
 ## Installation
 
-Download the [minified](https://github.com/9elt/jisho-on-the-fly/blob/min) branch code > navigate to chrome://extensions > toggle "developer options" on > load unpacked > select the downloaded folder
+Download the [minified](https://github.com/9elt/jisho-on-the-fly/blob/min) branch code > navigate to "chrome://extensions" > toggle "developer options" on > "load unpacked" > select the downloaded folder
 
 ## Usage
 
