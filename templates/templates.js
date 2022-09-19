@@ -3,17 +3,21 @@ const jisho_extension_template = `
 <style>
 
     .dark {
-        --bg: #24231fdb;
+        --bg: #24231fbf;
         --bg-2: #0002;
         --color: #fff;
         --accent: #51bd00;
+        --accent-low: #a2d979;
+        --shadow: #0006;
     }
 
     .light {
-        --bg: #f9f9f9de;
-        --bg-2: #0000000f;
-        --color: #222;
-        --accent: #00ada3;
+        --bg: #f9f9f982;
+        --bg-2: #ffffff5e;
+        --color: #404040;
+        --accent: #51bd00;
+        --accent-low: #a2d979;
+        --shadow: #b3b3b366;
     }
 
     .container {
@@ -22,38 +26,31 @@ const jisho_extension_template = `
         top: 8px;
         left: calc(50% - 306px);
         width: calc(98% - 32px);
-        max-width: 612px; /* svg*8 + padding*2 + border * 2 */
+        max-width: 612px;
         padding: 16px;
         padding-bottom: 0;
         background-color: var(--bg);
-
-        font-family: "Helvetica Neue", "Helvetica", "Arial",
-        "Source Han Sans", "源ノ角ゴシック", "Hiragino Sans",
-        "HiraKakuProN-W3", "Hiragino Kaku Gothic ProN W3",
-        "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3",
-        "Noto Sans", "Noto Sans CJK JP", "メイリオ", "Meiryo",
-        "游ゴシック", "YuGothic", "ＭＳ Ｐゴシック", "MS PGothic",
-        "ＭＳ ゴシック", "MS Gothic", sans-serif;
-
-        border-radius: 6px;
+        font-family: "Helvetica Neue", "Helvetica", "Arial", "Source Han Sans",
+        "源ノ角ゴシック", "Hiragino Sans", "HiraKakuProN-W3",
+        "Hiragino Kaku Gothic ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3",
+        "Noto Sans", "Noto Sans CJK JP", "メイリオ", "Meiryo", "游ゴシック", "YuGothic",
+        "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+        border-radius: 24px;
         color: var(--color);
-        backdrop-filter: blur(3px);
+        backdrop-filter: blur(10px);
         z-index: 999999;
         overflow: hidden;
-
-        border: var(--bg-2) solid 0px;
         max-height: 0;
         padding-top: 0;
         transition: all 0.5s ease-in-out;
-
         pointer-events: none;
+
+        box-shadow: 0 10px 20px #0005;
     }
 
     .container.active {
-        border: var(--bg-2) solid 2px;
         padding-top: 16px;
         max-height: 520px;
-
         pointer-events: all;
     }
 
@@ -72,7 +69,7 @@ const jisho_extension_template = `
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: var(--bg);
+        background-color: var(--bg-2);
         border-radius: 7px;
     }
 
@@ -96,13 +93,17 @@ const jisho_extension_template = `
         fill: var(--accent);
     }
 
-    .loader.active > svg {
+    .loader > svg > path:first-child {
+        animation-delay: .5s !important;
+    }
+
+    .loader.active > svg > path {
         animation: loaderAnimation 1s infinite;
     }
 
     @keyframes loaderAnimation {
         0% {fill: var(--accent);}
-        50% {fill: var(--color);}
+        50% {fill: var(--accent-low);}
         100% {fill: var(--accent);}
     }
 
@@ -144,7 +145,7 @@ const jisho_extension_template = `
         color: var(--color);
         margin: 0;
         font-size: 96px;
-        line-height: 96px;
+        line-height: 120px;
     }
 
     .k-l .kanji a,
@@ -153,24 +154,24 @@ const jisho_extension_template = `
         display: block;
         width: 90%;
         font-size: 18px;
+        line-height: 28px;
         font-weight: bold;
         text-align: center;
         text-decoration: none;
-        border-radius: 2px;
+        border-radius: 6px;
         background-color: var(--accent);
         color: #fff !important;
     }
 
     .k-l .kanji .jlpt {
         margin: 0;
-        color: var(--color);
+        color: var(--color) !important;
         background-color: var(--bg);
     }
 
     /* readings and meanings */
 
     .k-l .readings-meanings {
-        background-color: var(--bg-2);
         border-radius: 4px;
         padding: 0 8px 0 8px;
         width: 100%;
@@ -189,8 +190,9 @@ const jisho_extension_template = `
 
     .k-l ul.translation,
     .k-l ul.history {
-        border-radius: 3px;
+        border-radius: 6px;
         background-color: var(--bg-2);
+        box-shadow: inset 0 0 30px var(--shadow);
     }
 
     .k-l li {
@@ -251,6 +253,7 @@ const jisho_extension_template = `
 
     .k-l .close-gui,
     .d-l .close-gui {
+        font-weight: bold;
         font-size: 14px;
         margin: 0 0 0 16px ;
         text-align: center;
@@ -258,6 +261,11 @@ const jisho_extension_template = `
     }
 
     .k-l ul.history {
+        border-radius: 6px;
+        margin: 8px 0 8px 0;
+        font-size: 20px;
+        line-height: 20px;
+        box-shadow: inset 0 0 30px  var(--shadow);
         text-align: left;
     }
 
@@ -280,10 +288,15 @@ const jisho_extension_template = `
     }
 
     .d-l .word ul {
-        margin: 5px 0 5px 0;
+        margin: 16px auto 16px auto;
+        padding: 16px;
+        border-radius: 8px;
+        width: fit-content;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: var(--bg-2);
+        box-shadow: inset 0 0 30px  var(--shadow);
     }
 
     .d-l .word li {
@@ -301,7 +314,6 @@ const jisho_extension_template = `
         text-align: center;
         border-radius: 4px;
         margin-bottom: 10px;
-        background-color: var(--bg-2);
         max-height: 199px;
         overflow: auto;
         padding-top: 5px;
@@ -320,7 +332,7 @@ const jisho_extension_template = `
     .d-l .meaning li {
         display: inline-block;
         font-size: 24px;
-        margin: 5px 6px 4px 6px;
+        margin: 0px 6px 6px 6px;
         padding: 2px 5px 2px 5px;
         border-radius: 4px;
         background-color: var(--bg-2);
@@ -328,31 +340,35 @@ const jisho_extension_template = `
 
     .d-l .meaning li.index {
         background-color: var(--accent);
-        font-size: 12px;
+        box-shadow: 0 0 2px var(--accent);
+        font-size: 14px;
         font-weight: bold;
         position: relative;
-        top: -4px;
+        top: -3px;
+        border-radius: 7px;
         color: #0008;
     }
 
     .d-l .bottom-bar ul {
-        border-radius: 3px;
+        border-radius: 6px;
         background-color: var(--bg-2);
         margin: 8px 0 8px 0;
         font-size: 20px;
         line-height: 20px;
+        box-shadow: inset 0 0 30px  var(--shadow);
     }
 
     .d-l .bottom-bar li {
         cursor: pointer;
         display: inline-block;
         padding: 3px 8px;
-        margin: 3px;
-        border-radius: 3px;
+        margin: 5px;
+        border-radius: 5px;
     }
 
     .d-l .bottom-bar li.active {
         background-color: var(--accent);
+        box-shadow: 0 0 2px var(--accent);
     }
 
 </style>

@@ -8,7 +8,7 @@ Download the [minified](https://github.com/9elt/jisho-on-the-fly/tree/min) branc
 
 ## Usage
 
-#### **Select** some japanse text in a web page
+#### **Select** some text in a web page
 
 then:
 
