@@ -9,6 +9,8 @@ function start() {
 
     //  keydown event router
     window.addEventListener('keydown', (e) => { eventRouter(e) });
+
+    log();
 }
 
 function eventRouter(e) {
@@ -431,4 +433,24 @@ function guiState(active_sections) {
             shadow.querySelector('.' + section).classList.remove('active');
         }
     });
+}
+
+function log() {
+
+    const JISHO_LOG = `
+
+     ██████╗ ██╗  ████╗  ██╗      ████╗
+      ╚═██╔╝ ╚═╝ ██ ╔═╝  ██╚╗    ██  ██╗
+        ██║  ██╗  ████╗  █████╗  ██  ██║
+    ██  ██║  ██║   ╚╗██╗ ██╔═██╗ ██  ██║
+    ╚████╔╝  ██║ █████╔╝ ██║ ██║  ████╔╝
+     ╚═══╝   ╚═╝ ╚════╝  ╚═╝ ╚═╝  ╚═══╝
+                ON THE FLY ╗
+                ╚══════════╝
+
+          jisho scraping extension
+
+    `
+
+    console.log(`%c ${JISHO_LOG}`, `color: #60b024`);
 }

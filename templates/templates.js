@@ -24,7 +24,7 @@ const jisho_extension_template = `
 
         position: fixed;
         top: 8px;
-        left: calc(50% - 306px);
+        left: calc(50% - 324px);
         width: calc(98% - 32px);
         max-width: 612px;
         padding: 16px;
