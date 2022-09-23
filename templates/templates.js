@@ -45,7 +45,7 @@ const jisho_extension_template = `
         transition: all 0.5s ease-in-out;
         pointer-events: none;
 
-        box-shadow: 0 10px 20px #0005;
+        box-shadow: 0 10px 20px #0005, inset 0 0 100px 8px var(--bg-2);
     }
 
     .container.active {
