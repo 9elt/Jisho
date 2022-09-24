@@ -237,9 +237,7 @@ async function defLookup() {
     let selection = userSelection();
 
     const definitions = await scrapeDefs(selection, 10);
-        if (definitions === 'error') return error();
-
-    console.log(definitions);
+        if (definitions === 'error' || definitions.length == 0) return error();
 
     loadDefinition(definitions, 0);
 

@@ -1,10 +1,10 @@
-# jisho on the fly
+# Jisho on the fly
 
 A chrome extension to lookup japanese words on the fly.
 
 ## Installation
 
-Download the [minified](https://github.com/9elt/jisho-on-the-fly/tree/min) branch code > navigate to "chrome://extensions" > toggle "developer mode" on > "load unpacked" > select the downloaded folder
+Download the [minified](https://github.com/9elt/jisho-on-the-fly/tree/min) branch code > navigate to "**chrome://extensions**" > toggle "**developer mode**" on > "**load unpacked**" > select the code folder
 
 ## Usage
 

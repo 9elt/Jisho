@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "on-page Jisho",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "jisho definitions and kanji strokes on page",
     "permissions": [
         "tabs"
