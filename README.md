@@ -17,10 +17,16 @@ then:
 
 load word / sentence definitions
 
+
+<kbd>
 <img src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg" width="480" />
+</kbd>
 
 ### press CTRL + y
 
 load kanji meanings, readings and stroke order (max 1 kanji selected)
 
+
+<kbd>
 <img src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg" width="480" />
+</kbd>
