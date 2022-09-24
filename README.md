@@ -17,10 +17,10 @@ then:
 
 load word / sentence definitions
 
-<img src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg" width="480" />
+<img style="border-radius: 10px;" src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg" width="480" />
 
 ### press CTRL + y
 
 load kanji meanings, readings and stroke order (max 1 kanji selected)
 
-<img src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg" width="480" />
+<img style="border-radius: 10px;" src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg" width="480" />
