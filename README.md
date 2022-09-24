@@ -1,6 +1,7 @@
 # Jisho on the fly
+**chrome extension**
 
-A chrome extension to lookup japanese words on the fly.
+Lookup japanese words on the fly.
 
 ## Installation
 
