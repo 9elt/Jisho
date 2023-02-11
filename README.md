@@ -1,7 +1,7 @@
-# Jisho on the fly
-**chrome extension**
+# Jisho
+> current support: chrome (85+)
 
-Lookup japanese words on the fly.
+Unofficial [jisho.org](https://jisho.org) browser extension to lookup japanese words on the fly.
 
 ## Installation
 
@@ -9,23 +9,20 @@ Download the [minified](https://github.com/9elt/jisho-on-the-fly/tree/min) branc
 
 ## Usage
 
-#### **Select** some text in a web page
+### load word definitions
+> default short cut `CTRL + m`
 
-then:
-
-### press CTRL + m
-
-load word / sentence definitions
-
+select some japanese or english text 
+and load word definitions or translations
 
 <kbd>
 <img src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg" width="480" />
 </kbd>
 
-### press CTRL + y
+### load kanji meanings
+> default short cut `CTRL + y`
 
-load kanji meanings, readings and stroke order (max 1 kanji selected)
-
+select one kanji and load its meanings, readings and strokes order
 
 <kbd>
 <img src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg" width="480" />

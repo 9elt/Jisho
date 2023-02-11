@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "on-page Jisho",
+    "name": "Jisho",
     "version": "1.0.0",
-    "description": "jisho definitions and kanji strokes on page",
+    "description": "Unofficial Jisho.org extension",
     "permissions": [
         "tabs"
     ],
@@ -15,8 +15,11 @@
                 "<all_urls>"
             ],
             "js": [
-                "templates/templates.js",
-                "scripts/content.js"
+                "scripts/requests.js",
+                "scripts/scraper.js",
+                "scripts/style.js",
+                "scripts/gui.js",
+                "scripts/handler.js"
             ]
         }
     ],
