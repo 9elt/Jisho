@@ -91,11 +91,11 @@ const JISHO_STYLE=`
     fill: var(--accent);
 }
 
-.loader>svg>path:first-child {
+.loader path:first-child {
     animation-delay: .5s !important;
 }
 
-.loader.active>svg>path {
+.loader path {
     animation: loaderAnimation 1s infinite;
 }
 
