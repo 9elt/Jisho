@@ -1,29 +1,35 @@
 # Jisho
-> current support: chrome (85+)
+> current support: chrome (88+), firefox (101+)
 
 Unofficial [jisho.org](https://jisho.org) browser extension to lookup japanese words on the fly.
 
 ## Installation
 
-Download the [minified](https://github.com/9elt/jisho-on-the-fly/tree/min) branch code > navigate to "**chrome://extensions**" > toggle "**developer mode**" on > "**load unpacked**" > select the code folder
+### chrome
+Download the [`chrome branch`](https://github.com/9elt/Jisho/tree/chrome) code > navigate to **`chrome://extensions`** > toggle **`developer mode`** on > **`load unpacked`** > select the code folder.
+
+### firefox
+Download the [`firefox branch`](https://github.com/9elt/Jisho/tree/firefox) code > navigate to **`about:debugging#/runtime/this-firefox`** > **`Load Temporary Add-on`** on > select the **`manifest.json`** inside the code folder.
+
+Navigate to **`about:addons`** > **`Jisho`** > **`Permissions`** > toggle **`Access your data for all websites`** on
 
 ## Usage
 
 ### load word definitions
-> default shortcut `CTRL + m`
+> shortcut `CTRL + m`
 
 select some japanese or english text 
 and load word definitions or translations
 
 <kbd>
-<img src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/definition.jpg" width="480" />
+<img src="https://github.com/9elt/Jisho/blob/readme_media/media/definition.jpg?v=0002" data-canonical-src="https://github.com/9elt/Jisho/blob/readme_media/media/definition.jpg" width="480" />
 </kbd>
 
 ### load kanji meanings
-> default shortcut `CTRL + y`
+> shortcut `CTRL + y`
 
 select one kanji and load its meanings, readings and strokes order
 
 <kbd>
-<img src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg?v=0002" data-canonical-src="https://github.com/9elt/jisho-on-the-fly/blob/readme_media/media/kanji.jpg" width="480" />
+<img src="https://github.com/9elt/Jisho/blob/readme_media/media/kanji.jpg?v=0002" data-canonical-src="https://github.com/9elt/Jisho/blob/readme_media/media/kanji.jpg" width="480" />
 </kbd>

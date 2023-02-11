@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(
+(chrome ?? browser).runtime.onMessage.addListener(
   (request, sender, sendResponse) => {
     if (request.scrape) {
       fetch(request.url)

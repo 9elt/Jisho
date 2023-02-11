@@ -115,13 +115,16 @@ class JishoHandler {
 
     const is_backwards = selection.baseOffset > selection.extentOffset
 
-    const start = is_backwards
-      ? selection.extentOffset : selection.baseOffset
+    const start = is_backwards 
+      ? selection.extentOffset ?? selection.focusOffset
+      : selection.baseOffset ?? selection.anchorOffset
 
     const end = is_backwards
-      ? selection.baseOffset : selection.extentOffset
+      ? selection.baseOffset ?? selection.anchorOffset
+      : selection.extentOffset ?? selection.focusOffset
 
-    const parsed = selection?.baseNode?.textContent?.substring(start, end)?.trim()
+    const parsed = selection?.baseNode?.textContent?.substring(start, end)?.trim() 
+      ?? selection.focusNode.textContent?.substring(start, end)?.trim()
 
     return limit
       ? parsed.substring(0, limit)
