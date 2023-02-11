@@ -1,5 +1,5 @@
 # Jisho
-> current support: chrome (85+)
+> current support: chrome (85+), firefox (79+)
 
 Unofficial [jisho.org](https://jisho.org) browser extension to lookup japanese words on the fly.
 
@@ -10,7 +10,7 @@ Download the [minified](https://github.com/9elt/jisho-on-the-fly/tree/min) branc
 ## Usage
 
 ### load word definitions
-> default short cut `CTRL + m`
+> default shortcut `CTRL + m`
 
 select some japanese or english text 
 and load word definitions or translations
@@ -20,7 +20,7 @@ and load word definitions or translations
 </kbd>
 
 ### load kanji meanings
-> default short cut `CTRL + y`
+> default shortcut `CTRL + y`
 
 select one kanji and load its meanings, readings and strokes order
 
