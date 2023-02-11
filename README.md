@@ -1,5 +1,5 @@
 # Jisho
-> current support: chrome (85+), firefox (79+)
+> current support: chrome (85+)
 
 Unofficial [jisho.org](https://jisho.org) browser extension to lookup japanese words on the fly.
 
