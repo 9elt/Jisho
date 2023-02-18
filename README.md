@@ -5,13 +5,8 @@ Unofficial [jisho.org](https://jisho.org) browser extension to lookup japanese w
 
 ## Installation
 
-### chrome
-Download the [**chrome branch**](https://github.com/9elt/Jisho/tree/chrome) code > navigate to **`chrome://extensions`** > toggle **"developer mode"** on > **"Load unpacked"** > select the code folder.
-
-### firefox
-Download the [**firefox branch**](https://github.com/9elt/Jisho/tree/firefox) code > navigate to **`about:debugging#/runtime/this-firefox`** > **"Load Temporary Add-on"** on > select the **`manifest.json`** inside the code folder.
-
-Navigate to **`about:addons`** > **"Jisho"** > **"Permissions"** > toggle **"Access your data for all websites"** on
+* [**chrome**](https://github.com/9elt/Jisho/tree/chrome)
+* [**firefox**](https://github.com/9elt/Jisho/tree/firefox)
 
 ## Usage
 
