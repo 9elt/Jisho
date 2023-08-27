@@ -20,4 +20,4 @@ export const DEFAULT_SHORTCUTS = {
 };
 
 export const SYSTEM_COLOR_SCHEME = matchMedia("(prefers-color-scheme: dark)")
-    .matches ? "dark" : "ligth";
+    .matches ? "dark" : "light";
