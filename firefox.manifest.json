@@ -1,9 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "Jisho",
+    "name": "Jisho On The Fly",
     "version": "1.0.0",
-    "description": "Unofficial Jisho.org extension",
-    "permissions": [],
+    "description": "Unofficial Jisho.org extension, to lookup word definitions and kanji info directly on the page",
+    "permissions": [
+        "storage"
+    ],
     "host_permissions": [
         "<all_urls>"
     ],
@@ -13,17 +15,27 @@
                 "<all_urls>"
             ],
             "js": [
-                "scripts/requests.js",
-                "scripts/scraper.js",
-                "scripts/style.js",
-                "scripts/gui.js",
-                "scripts/handler.js"
+                "./content.js"
             ]
         }
     ],
     "background": {
         "scripts": [
-            "scripts/background.js"
+            "./worker.js"
         ]
+    },
+    "action": {
+        "default_icon": {
+            "16": "media/logo-16.png",
+            "32": "media/logo-32.png"
+        },
+        "default_title": "Jisho on the fly",
+        "default_popup": "popup.html"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "jisho@example.org",
+            "strict_min_version": "42.0"
+        }
     }
 }

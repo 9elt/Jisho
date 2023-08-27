@@ -1,30 +1,28 @@
-# Jisho
+# Jisho On The Fly
 > current support: **chrome** (**88+**), **firefox** (**101+**)
 
-Unofficial [jisho.org](https://jisho.org) browser extension to lookup japanese words on the fly.
-
-## Installation
-
-* [**chrome**](https://github.com/9elt/Jisho/tree/chrome)
-* [**firefox**](https://github.com/9elt/Jisho/tree/firefox)
+Unofficial [**Jisho.org**](https://jisho.org) extension, to lookup word definitions and kanji info directly on the page
 
 ## Usage
 
-### load word definitions
-> shortcut `CTRL + m`
+### word definitions
 
-select some japanese or english text 
-and load word definitions or translations
+Select some japanese or english text
 
-<kbd>
-<img src="https://github.com/9elt/Jisho/blob/readme_media/media/definition.jpg?v=0002" data-canonical-src="https://github.com/9elt/Jisho/blob/readme_media/media/definition.jpg" width="480" />
-</kbd>
+<img src="https://github.com/9elt/Jisho/blob/main/media/definition.jpg?v=0001" data-canonical-src="https://github.com/9elt/Jisho/blob/main/media/definition.jpg" width="480" />
 
-### load kanji meanings
-> shortcut `CTRL + y`
+> default shortcut **`CTRL`** + **`SHIFT`** + **`Y`**
 
-select one kanji and load its meanings, readings and strokes order
+### kanji
 
-<kbd>
-<img src="https://github.com/9elt/Jisho/blob/readme_media/media/kanji.jpg?v=0002" data-canonical-src="https://github.com/9elt/Jisho/blob/readme_media/media/kanji.jpg" width="480" />
-</kbd>
+Select some text containing kanji
+
+<img src="https://github.com/9elt/Jisho/blob/main/media/kanji.jpg?v=0001" data-canonical-src="https://github.com/9elt/Jisho/blob/main/media/kanji.jpg" width="480" />
+
+> default shortcut **`CTRL`** + **`Y`**
+
+### kanji practise sheet
+
+Once you have looked up some kanji, you can generate your **printable kanji practise sheet**
+
+<img src="https://github.com/9elt/Jisho/blob/main/media/practise.jpg?v=0001" data-canonical-src="https://github.com/9elt/Jisho/blob/main/media/practise.jpg" width="480" />

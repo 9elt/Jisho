@@ -1,0 +1,67 @@
+.dark {
+    --bg: #24231fbf;
+    --bg-2: #0002;
+    --color: #fff;
+    --accent: #51bd00;
+    --accent-trans: #51bd0040;
+    --accent-low: #a2d979;
+    --shadow: #0006;
+}
+
+.light {
+    --bg: #f9f9f9d9;
+    --bg-2: #ffffff5e;
+    --color: #404040;
+    --accent: #51bd00;
+    --accent-trans: #51bd0040;
+    --accent-low: #a2d979;
+    --shadow: #b3b3b366;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--shadow);
+    border-radius: 7px;
+}
+
+::selection {
+    background-color: var(--accent);
+}
+
+.main {
+    color: var(--color);
+    background-color: var(--bg);
+    box-shadow: 0 10px 20px #0005, inset 0 0 100px 8px var(--bg-2);
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "Source Han Sans", "源ノ角ゴシック", "Hiragino Sans", "HiraKakuProN-W3", "Hiragino Kaku Gothic ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans", "Noto Sans CJK JP", "メイリオ", "Meiryo", "游ゴシック", "YuGothic", "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+}
+
+.loader>svg {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    fill: var(--accent);
+}
+
+.loader path:first-child {
+    animation-delay: .5s !important;
+}
+
+.loader path {
+    animation: loaderAnimation 1s infinite;
+}
+
+@keyframes loaderAnimation {
+    0% { fill: var(--accent); }
+    50% { fill: var(--accent-low); }
+    100% { fill: var(--accent); }
+}

@@ -1,0 +1,188 @@
+html,
+body {
+    margin: 0;
+    /* width: 100%; */
+    width: 450px;
+    max-width: 450px;
+    font-size: 16px;
+    background-color: #888;
+}
+
+#popup-GUI {
+    padding: .5% 4%;
+    transition: background-color 0.1s ease-in-out;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header>div {
+    display: flex;
+    align-items: center;
+}
+
+header svg {
+    fill: var(--accent);
+    width: 48px;
+    height: 48px;
+}
+
+header h2 {
+    margin-left: 8px;
+}
+
+header h2 span {
+    opacity: 0.5;
+}
+
+footer {
+    padding: 16px;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer div u {
+    cursor: pointer;
+    margin-top: 8px;
+    margin-inline: 8px;
+}
+
+footer div u:hover {
+    color: var(--accent);
+}
+
+.shortcut,
+.practise {
+    padding: 8px;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 48px var(--shadow);
+    border-radius: 12px;
+    margin-block: 16px;
+}
+
+.shortcut.active {
+    box-shadow: 0 0 4px var(--accent);
+    background-color: var(--accent-trans);
+}
+
+.shortcut .caption {
+    margin: 0;
+}
+
+.shortcut>div {
+    display: flex;
+    align-items: center;
+}
+
+.shortcut .keys {
+    background-color: var(--shadow);
+    padding: 4px 12px;
+    line-height: 1;
+    margin-inline: 2px;
+    border-radius: 4px;
+    margin-right: 8px;
+    min-width: 200px;
+}
+
+.shortcut .record {
+    width: 24px;
+    height: 24px;
+    background-color: var(--shadow);
+    box-shadow: 0 0 1px var(--shadow);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.shortcut.active .record,
+.shortcut .record:hover {
+    background-color: var(--accent);
+    box-shadow: 0 0 3px var(--accent);
+}
+
+.practise .download {
+    margin-inline: auto;
+    background-color: var(--shadow);
+    box-shadow: 0 0 1px var(--shadow);
+    border-radius: 12px;
+    text-align: center;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.practise .download:hover {
+    background-color: var(--accent);
+    box-shadow: 0 0 3px var(--accent);
+}
+
+.preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashed {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: 2px;
+}
+
+.dashed h2,
+.dashed svg {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+.dashed h2 {
+    font-size: 64px;
+    line-height: 1;
+    top: 2px;
+}
+
+.dashed>div {
+    width: 30px;
+    height: 30px;
+    border: 1px dashed var(--shadow);
+    display: inline-block;
+}
+
+.dashed svg {
+    fill-rule: nonzero;
+    stroke-width: 3;
+    fill: none;
+}
+
+.dashed path.previous {
+    opacity: .8;
+    stroke: var(--color);
+}
+
+.dashed path.current {
+    opacity: 1;
+    stroke: var(--accent);
+    stroke-width: 4;
+}
+
+.dashed path.next {
+    opacity: .2;
+    stroke: var(--color);
+}
+
+.dashed circle {
+    fill: var(--accent);
+}

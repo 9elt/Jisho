@@ -1,0 +1,406 @@
+* { margin: 0; }
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    width: 90%;
+    max-width: 980px;
+    margin-inline: auto;
+}
+
+.wrapper {
+    margin-block: 64px;
+}
+
+.hidden.wrapper {
+    opacity: 0.5;
+    margin-block: 26px !important;
+}
+
+.hidden.wrapper .readings, 
+.hidden.wrapper .meanings,
+.hidden.wrapper .practice,
+.hidden.wrapper br,
+.hidden.wrapper .dash:not(.ref) {
+    display: none;
+}
+
+/* header p, header br {
+    display: none;
+} */
+
+@media print {
+    .controls {
+        display: none;
+    }
+
+    body >br {
+        display: none;
+    }
+
+    html,
+    body {
+        width: 210mm;
+        max-width: 210mm;
+        height: 297mm;
+        margin: 0;
+    }
+
+    .wrapper,
+    header {
+        margin: 0;
+        padding: 8mm;
+        padding-left: 16mm;
+        padding-bottom: 3mm;
+        page-break-inside: avoid;
+    }
+
+    .hidden.wrapper {
+        display: none;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    border-radius: 0;
+    border: none;
+    font-size: 13px;
+    padding: 9px 15px;
+    cursor: pointer;
+}
+
+/*
+
+controls
+
+*/
+
+.controls textarea {
+    display: block;
+    width: 100%;
+}
+
+/*
+
+dash
+
+*/
+
+.dash {
+    --size: 60px;
+    position: relative;
+    margin: 2px;
+    width: var(--size);
+    height: var(--size);
+}
+
+.dash:not(.ref) {
+    border: 1px dashed #0006;
+}
+
+.dash:not(.ref)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--size);
+    height: calc(var(--size) / 2);
+    border-bottom: 1px dashed #0006;
+}
+
+.dash:not(.ref)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(var(--size) / 2);
+    width: calc(var(--size) / 2);
+    height: var(--size);
+    border-left: 1px dashed #0006;
+}
+
+/*
+
+ref
+
+*/
+
+.ref {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ref >*{
+    margin: 0;
+    line-height: 1;
+}
+
+.ref .jlpt {
+    font-size: calc(var(--size) * 0.25);
+    background-color: #333;
+    width: fit-content;
+    color: #fff;
+    padding: 3px 6px 3px 6px;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: calc(var(--size) * -0.35);
+    margin-bottom: calc(var(--size) * 0.15);
+}
+
+.ref h1 {
+    font-size: calc(var(--size) * 0.75);
+}
+
+/*
+
+strokes
+
+*/
+
+.strokes, .practice {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.strokes svg {
+    fill: none;
+    stroke-width: 4;
+    border: 1px solid #0002;
+}
+
+.strokes path.previous {
+    stroke: #0006;
+}
+
+.strokes path.current {
+    stroke-width: 5;
+    stroke: #000;
+}
+
+.strokes path.next {
+    stroke: #0003;
+}
+
+.strokes svg circle {
+    fill: #000;
+}
+
+/*
+
+readings and meanings
+
+*/
+
+.readings {
+    flex: 0 0 93mm;
+}
+
+.readings>h4,
+.meanings>h4 {
+    margin-right: 5px;
+}
+
+ul {
+    list-style: none;
+    list-style-type: disc;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 2px;
+}
+
+.readings li:not(li:last-child)::after {
+    content: '、'
+}
+
+.meanings li:not(li:last-child)::after {
+    content: ','
+}
+
+ul>li:first-child {
+    margin-left: 0;
+}
+
+
+
+/*
+
+legacy
+
+
+
+.strokes,
+.practice {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.strokes {
+    justify-content: center;
+    width: 70%;
+    padding: 0 10% 0 10%;
+}
+
+.strokes svg,
+.practice>div {
+    position: relative;
+    border: 1px dashed #0003;
+    margin: 2px;
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.strokes svg::before,
+.practice>div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(2.8rem);
+    height: calc(1.4rem);
+
+    border-bottom: 1px dashed #0003;
+}
+
+.strokes svg::after,
+.practice>div::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1.4rem;
+    width: calc(1.4rem);
+    height: calc(2.8rem);
+    border-left: 1px dashed #0003;
+}
+
+.strokes svg {
+    border: 1px solid #0002;
+    fill: none;
+    stroke-width: 3;
+}
+
+.strokes path.previous {
+    stroke: #0006;
+}
+
+.strokes path.current {
+    stroke-width: 4;
+    stroke: #000;
+}
+
+.strokes path.next {
+    stroke: #0003;
+}
+
+.strokes svg circle {
+    fill: #000;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex>div,
+.flex>h1 {
+    margin-right: 1rem;
+}
+
+h1 {
+    width: 10%;
+    font-size: 4rem;
+}
+
+.jlpt {
+    background-color: #0007;
+    width: fit-content;
+    color: #fff;
+    border-radius: 3px;
+    padding: 3px 6px 3px 6px;
+    text-align: center;
+    justify-content: center;
+}
+
+.jlpt>h4 {
+    margin-left: 2px;
+}
+
+.readings {
+    flex: 0 0 93mm;
+}
+
+.readings>h4,
+.meanings>h4 {
+    margin-right: 5px;
+}
+
+ul {
+    list-style: none;
+    list-style-type: disc;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 2px;
+}
+
+li:not(li:last-child)::after {
+    content: '、'
+}
+
+ul>li:first-child {
+    margin-left: 0;
+}
+
+.break-page {
+    page-break-before: always;
+}
+
+.kanji-info {
+    page-break-inside: avoid;
+}
+
+.jp-text {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.jp-text p {
+    font-size: 1.7rem;
+    line-height: calc(1.7rem + 18px);
+    text-align: justify;
+}
+
+.jp-text h2 {
+    line-height: calc(1.9rem + 18px);
+}
+
+.jp-text b {
+    display: block;
+    font-size: 1rem;
+}
+
+.text>span {
+    position: relative;
+}
+
+.text .hira {
+    position: absolute;
+    top: -26px;
+    width: 100%;
+    left: 0;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 12px;
+}
+
+*/
