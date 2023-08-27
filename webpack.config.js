@@ -14,7 +14,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/popup/index.html",
-      chunks : ['popup'],
+      chunks: ['popup'],
       filename: "popup.html"
     })
   ],
@@ -33,5 +33,8 @@ module.exports = {
         loader: "html-loader",
       },
     ],
-  }
+  },
+  optimization: {
+    minimize: false
+  },
 }
