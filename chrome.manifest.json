@@ -22,10 +22,18 @@
     "background": {
         "service_worker": "./worker.js"
     },
+    "icons": {
+        "16": "media/logo-16.png",
+        "32": "media/logo-32.png",
+        "48": "media/logo-48.png",
+        "128": "media/logo-128.png"
+    },
     "action": {
         "default_icon": {
             "16": "media/logo-16.png",
-            "32": "media/logo-32.png"
+            "32": "media/logo-32.png",
+            "48": "media/logo-48.png",
+            "128": "media/logo-128.png"
         },
         "default_title": "Jisho on the fly",
         "default_popup": "popup.html"
