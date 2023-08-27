@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -rf ./zips/*.zip
+mkdir zips 2>/dev/null
+
+for manifest in *.manifest.json; do
+    target="${manifest//.manifest.json/}"
+    zip -r ./zips/"$target" ./"$target"
+done

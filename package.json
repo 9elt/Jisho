@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "bash scripts/build"
+    "build": "bash scripts/build",
+    "zip": "bash scripts/zip"
   },
   "dependencies": {
     "@9elt/miniframe": "^0.4.6",
