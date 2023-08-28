@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd firefox && zip -r ../firefox.zip ./*
+cd .. && mv firefox.zip zips

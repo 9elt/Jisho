@@ -1,9 +1,9 @@
 #!/bin/bash
 
-rm -rf ./zips/*.zip
-mkdir zips 2>/dev/null
+rm -rf zips
+mkdir zips
 
 for manifest in *.manifest.json; do
     target="${manifest//.manifest.json/}"
-    zip -r ./zips/"$target" ./"$target"
+    [[ -f "scripts/zip.$target" ]] && bash "scripts/zip.$target"
 done
