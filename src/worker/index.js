@@ -1,4 +1,4 @@
-import { listen } from "../util";
+import { BROWSER, actionLabel, listen, request } from "../util";
 
 listen("GET", async ({ url }) => {
     console.log("GET", url);
@@ -16,3 +16,18 @@ listen("GET", async ({ url }) => {
         return { error: { code: 500 } };
     }
 });
+
+listen("CREATE-CONTEXT-MENUS", async ({ actions }) => {
+    BROWSER.contextMenus.removeAll(() => {
+        actions.forEach(action => BROWSER.contextMenus.create({
+            id: action,
+            title: actionLabel(action),
+            contexts: ["selection"],
+        }));
+    });
+});
+
+BROWSER.contextMenus.onClicked.addListener((e) => request({
+    type: "ACTION",
+    action: e.menuItemId
+}, "TAB"));

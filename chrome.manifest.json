@@ -4,7 +4,8 @@
     "version": "1.0.0",
     "description": "Unofficial Jisho.org extension, to lookup word definitions and kanji info directly on the page",
     "permissions": [
-        "storage"
+        "storage",
+        "contextMenus"
     ],
     "content_scripts": [
         {
