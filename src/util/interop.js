@@ -9,13 +9,10 @@ export function request(request, target) {
     );
 }
 
-export function listen(type, f) {
+export function listen(type, callback) {
     BROWSER.runtime.onMessage.addListener((req, _, res) => {
         if (req.type === type) {
-            const result = f(req);
-            result instanceof Promise
-                ? result.then(r => res(r))
-                : res(r);
+            callback(req).then(result => res(result ?? true));
             return true;
         }
     });

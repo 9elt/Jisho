@@ -7,34 +7,15 @@ export default async function renderPractiseSheet() {
     await history.ok;
     const active = hidden.as(h => history.value.filter(k => !h.includes(k.kanji)));
 
-    document.head.append(createNode(head));
+    document.head.append(createNode(style));
     document.body.append(createNode(body(active, history.value)));
 }
 
 const hidden = State.from([]);
 
-const head = {
-    tagName: "head",
-    children: [
-        {
-            tagName: "title",
-            children: ["Kanji Practise Sheet"],
-        },
-        {
-            tagName: "meta",
-            "http-equiv": "X-UA-Compatible",
-            "content": "text/html; charset=utf-8",
-        },
-        {
-            tagName: "meta",
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-        },
-        {
-            tagName: "style",
-            innerHTML: practiseCSS,
-        },
-    ]
+const style = {
+    tagName: "style",
+    innerHTML: practiseCSS,
 };
 
 const body = (active, history) => ({
@@ -215,6 +196,6 @@ const list = (readings, type) => ({
 
 const dash = (child) => ({
     tagName: "div",
-    className: child?.className?.includes("ref") ? "ref dash" : "dash",
+    className: (child.className ?? "") + " dash",
     children: [child || ""]
 });

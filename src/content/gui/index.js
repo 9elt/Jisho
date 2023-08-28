@@ -54,7 +54,7 @@ class GUI {
     }
     current(v, props) {
         this.__check();
-        this.isError ||= false;
+        this.isError &&= false;
         current.value = this.__route(v, props);
     }
     __check() {

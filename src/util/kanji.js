@@ -3,25 +3,23 @@ export function isKanji(char) {
         || /^[\u3400-\u4dbf]+$/.test(char);
 }
 
-export function firstKanji(str) {
+/**
+ * @param {string} str
+ * @param {string} trail
+ * @returns {[string, string]} `[kanji char, next trail]`
+ */
+export function cycleKanji(str, trail) {
+    let carry = "";
     let i = 0;
-    while (i < str.length && !isKanji(str.charAt(i)))
-        i++;
-    return str.charAt(i);
-}
-
-export function cycleKanji(str, streak) {
-    let i = 0;
-    let s = 0;
-    let br;
+    let t = 0;
 
     while (i < str.length && (
         !isKanji(str.charAt(i)) ||
-        str.charAt(i) === (streak.charAt(s++) || (br = true))
+        str.charAt(i) === (trail.charAt(t++) || (carry = trail))
     ))
         i++;
 
-    return s === streak.length && !isKanji(str.charAt(i))
-        ? [streak.charAt(0), streak.charAt(0)]
-        : [str.charAt(i), (br ? streak : "") + str.charAt(i)];
+    return t === trail.length && !isKanji(str.charAt(i))
+        ? [trail.charAt(0), trail.charAt(0)]
+        : [str.charAt(i), carry + str.charAt(i)];
 }
