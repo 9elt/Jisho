@@ -11,7 +11,7 @@ const shortcuts = {
         {
             tagName: "p",
             children: [
-                "Use the shortcuts below to lookup ",
+                "Use the shortcuts below to look up ",
                 { tagName: "b", children: ["word definitions"] },
                 " or ",
                 { tagName: "b", children: ["kanji information"] },
@@ -66,7 +66,7 @@ function shortcut(action, keys) {
             {
                 tagName: "p",
                 className: "caption",
-                children: ["Lookup a ", action.replace("on", "").toLowerCase()]
+                children: ["Look up a ", action.replace("on", "").toLowerCase()]
             },
             {
                 tagName: "div",

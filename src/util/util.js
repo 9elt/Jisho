@@ -3,7 +3,7 @@ export function sizeKB(v) {
 }
 
 export function actionLabel(str) {
-    return capitalize(str.replace("on", "lookup "));
+    return capitalize(str.replace("on", "look up "));
 }
 
 export function capitalize(str) {

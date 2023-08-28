@@ -16,7 +16,7 @@ const practise = history.as(history => ({
                 tagName: "p",
                 children: [
                     "You don't have a kanji history, ",
-                    { tagName: "b", children: ["lookup some kanji"] },
+                    { tagName: "b", children: ["look up some kanji"] },
                     " to enable this feature!"
                 ]
             },
