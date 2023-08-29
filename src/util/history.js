@@ -23,12 +23,11 @@ import storage from "./storage";
  *    jlpt: string;
  * }[]> & {
  *    ok: Promise<boolean>;
-*     isAwaiting: boolean;
 *     save: () => Promise<boolean>;
 *     sync: () => Promise<boolean>;
 *     clear: () => Promise<boolean>;
 *     add: () => void;
-* }} 
+* }}
  */
 const history = State.from(["WAITING"]);
 

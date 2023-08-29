@@ -237,7 +237,6 @@ export default async function renderPractiseSheet() {
                 tagName: "div",
                 className: "info",
                 children: [
-                    // { tagName: "br" },
                     {
                         tagName: "div",
                         className: "flex",
@@ -247,7 +246,6 @@ export default async function renderPractiseSheet() {
                             list(kanji.readings.on, "on-readings")
                         ]
                     },
-                    // { tagName: "br" },
                     list(kanji.meanings, "meanings"),
                 ]
             },
