@@ -58,20 +58,15 @@ const word = ({ link, word }) => ({
             children: ["jisho.org"],
         },
         {
-            tagName: "ul",
+            tagName: "p",
             children: word.map(({ kanji, furigana }) => ({
-                tagName: "li",
+                tagName: "ruby",
                 children: [
                     {
-                        tagName: "span",
-                        className: "furigana",
-                        children: [furigana || " "],
+                        tagName: "rt",
+                        children: [furigana || ""],
                     },
-                    {
-                        tagName: "span",
-                        className: "kanji",
-                        children: [kanji || " "],
-                    },
+                    kanji
                 ],
             })),
         },

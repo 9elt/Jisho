@@ -202,26 +202,27 @@
     margin-right: auto;
 }
 
-.definition .info .word ul {
+.definition .info .word p {
+    width: fit-content;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     margin: 16px auto 16px auto;
     padding: 16px;
     border-radius: 8px;
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var(--bg-2);
     box-shadow: inset 0 0 30px var(--shadow);
 }
 
-.definition .info .word li {
+.definition .info .word ruby {
     font-size: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.definition .info .word .furigana {
+.definition .info .word rt {
     font-size: 20px;
 }
 

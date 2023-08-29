@@ -49,7 +49,7 @@ async function main() {
             gui.current({ kanji: data }, {
                 onClose: () => gui.active(false),
                 onHistory: (k) => getKanji(k),
-                history: history.value.slice(0, 13).map(h => h.kanji),
+                history: history.value.slice(0, 12).map(h => h.kanji),
             });
             history.add(data);
         }
