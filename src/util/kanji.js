@@ -1,6 +1,5 @@
 export function isKanji(char) {
-    return /^[\u4e00-\u9faf]+$/.test(char)
-        || /^[\u3400-\u4dbf]+$/.test(char);
+    return /[\u4e00-\u9faf|\u3400-\u4dbf]/.test(char);
 }
 
 /**
