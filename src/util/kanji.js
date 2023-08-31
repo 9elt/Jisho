@@ -4,22 +4,20 @@ export function isKanji(char) {
 }
 
 /**
- * @param {string} str
+ * @param {string} search
  * @param {string} trail
- * @returns {[string, string]} `[kanji char, next trail]`
+ * @returns {string} `next trail`
  */
-export function cycleKanji(str, trail) {
+export function cycleKanji(search, trail) {
     let carry = "";
-    let i = 0;
+    let s = 0;
     let t = 0;
-
-    while (i < str.length && (
-        !isKanji(str.charAt(i)) ||
-        str.charAt(i) === (trail.charAt(t++) || (carry = trail))
+    while (s < search.length && (
+        !isKanji(search.charAt(s)) ||
+        search.charAt(s) === (trail.charAt(t++) || (carry = trail))
     ))
-        i++;
-
-    return t === trail.length && !isKanji(str.charAt(i))
-        ? [trail.charAt(0), trail.charAt(0)]
-        : [str.charAt(i), carry + str.charAt(i)];
+        s++;
+    return t === trail.length && !isKanji(search.charAt(s))
+        ? trail.charAt(0)
+        : carry + search.charAt(s);
 }

@@ -23,12 +23,12 @@ async function main() {
     await history.ok;
     await cache.ok;
 
-    let streak = "";
+    let trail = "";
 
     useControls({
         onKanji: ({ selection }) => {
-            const [target, _streak] = cycleKanji(selection, streak);
-            streak = _streak;
+            trail = cycleKanji(selection, trail);
+            const target = trail.charAt(trail.length - 1);
             target ? getKanji(target)
                 : gui.error(`No kanji found in "${selection}"`, 1000);
         },
