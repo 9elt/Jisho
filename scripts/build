@@ -4,12 +4,11 @@ npx webpack || exit 1
 
 for manifest in *.manifest.json; do
     target="${manifest//.manifest.json/}"
-    rm -rf "$target" 2>/dev/null
-    mkdir "$target" 2>/dev/null
+    rm -rf "$target"
+    mkdir "$target"
     cp -r dist/* "$target/" && cp "$manifest" "$target/manifest.json"
-    mkdir "$target/media"
-    cp -r media/logo*.png "$target/media/"
-    [[ -f "scripts/$target" ]] && bash "scripts/$target"
+    mkdir "$target/media" && cp -r media/logo*.png "$target/media/"
+    [[ -f "scripts/build.$target" ]] && bash "scripts/build.$target"
 done
 
 rm -rf dist

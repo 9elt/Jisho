@@ -23,12 +23,11 @@ import storage from "./storage";
  *    jlpt: string;
  * }[]> & {
  *    ok: Promise<boolean>;
-*     isAwaiting: boolean;
 *     save: () => Promise<boolean>;
 *     sync: () => Promise<boolean>;
 *     clear: () => Promise<boolean>;
 *     add: () => void;
-* }} 
+* }}
  */
 const history = State.from(["WAITING"]);
 
@@ -40,33 +39,47 @@ history.ok = (async () => {
     return true;
 })();
 
+history.modified = false;
+
 history.clear = async () => {
-    if (!(await history.ok)) { return false };
+    if (!(await history.ok)) {
+        return false;
+    }
     history.value = [];
-    await history.save();
+    await storage.set("history", []);
     return true;
 }
 
 history.sync = async () => {
-    if (!(await history.ok)) { return false };
+    if (!(await history.ok)) {
+        return false;
+    }
     await request({ type: "SAVE-HISTORY" }, "TAB");
     history.value = await storage.get("history") ?? [];
     return true;
 }
 
 history.save = async () => {
-    if (!(await history.ok)) { return false };
+    if (!history.modified || !(await history.ok)) {
+        return false;
+    }
     let size = 320;
-    let dump = history.value.slice(0, size);
+    let prev = await storage.get("history") ?? [];
+    let curr = history.value;
+    let update = curr.length < size && prev.length ? curr.concat(
+        prev.filter(p => !history.value.find(c => p.kanji === c.kanji))
+    ) : curr;
+    let dump = update.slice(0, size);
     while (size && sizeKB(dump) > 5000) {
         size -= 64;
-        dump = history.value.slice(0, size);
+        dump = update.slice(0, size);
     }
     await storage.set("history", dump);
     return true;
 }
 
 history.add = (data) => {
+    history.modified ||= true;
     history.value = history.value.filter(h => h.kanji !== data.kanji)
     history.value.unshift(data);
 }

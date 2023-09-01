@@ -4,17 +4,17 @@ import gui from "./gui";
 import config from "../util/config";
 import history from "../util/history";
 import cache from "../util/cache";
-import renderPractiseSheet from "./practise";
+import renderPracticeSheet from "./practice";
 import { cycleKanji, listen } from "../util";
-import { PRACTISE_SHEET_URL } from "../util/consts";
+import { PRACTICE_SHEET_URL } from "../util/consts";
 
 
 listen("SYNC-CONFIG", config.sync);
 listen("SAVE-HISTORY", history.save);
 listen("CLEAR-HISTORY", history.clear);
 
-if (window.location.href === PRACTISE_SHEET_URL) {
-    renderPractiseSheet();
+if (window.location.href === PRACTICE_SHEET_URL) {
+    renderPracticeSheet();
 }
 
 window.onbeforeunload = () => { history.save() };
@@ -23,12 +23,13 @@ async function main() {
     await history.ok;
     await cache.ok;
 
-    let streak = "";
+    let trail = "";
 
     useControls({
         onKanji: ({ selection }) => {
-            const [target, _streak] = cycleKanji(selection, streak);
-            streak = _streak;
+            if (!selection) { return; }
+            trail = cycleKanji(selection, trail);
+            const target = trail.charAt(trail.length - 1);
             target ? getKanji(target)
                 : gui.error(`No kanji found in "${selection}"`, 1000);
         },
@@ -49,7 +50,7 @@ async function main() {
             gui.current({ kanji: data }, {
                 onClose: () => gui.active(false),
                 onHistory: (k) => getKanji(k),
-                history: history.value.slice(0, 13).map(h => h.kanji),
+                history: history.value.slice(0, 12).map(h => h.kanji),
             });
             history.add(data);
         }

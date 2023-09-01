@@ -16,7 +16,7 @@ const clearHistoryButton = {
                 children: ["confirm"],
                 onclick: () => { clearHistory(); confirm.value = false; }
             },
-            " - ",
+            " | ",
             {
                 tagName: "u",
                 children: ["cancel"],

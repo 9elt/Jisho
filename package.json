@@ -1,6 +1,8 @@
 {
   "scripts": {
     "build": "bash scripts/build",
+    "dev:firefox": "bash scripts/dev firefox",
+    "dev:chrome": "bash scripts/dev chrome",
     "zip": "bash scripts/zip"
   },
   "dependencies": {

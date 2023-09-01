@@ -7,7 +7,7 @@ import popupCSS from "../styles/popup.css";
 
 import header from "./components/header";
 import shortcuts from "./components/shortcuts";
-import practise from "./components/practise";
+import practice from "./components/practice";
 import footer from "./components/footer";
 
 const root = createNode({
@@ -20,7 +20,7 @@ const root = createNode({
             tagName: "div",
             children: [shortcuts],
         },
-        practise,
+        practice,
         footer,
     ]
 });

@@ -44,7 +44,7 @@ footer {
 
 footer div {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
@@ -59,7 +59,7 @@ footer div u:hover {
 }
 
 .shortcut,
-.practise {
+.practice {
     padding: 8px;
     padding-bottom: 0;
     box-sizing: border-box;
@@ -107,7 +107,7 @@ footer div u:hover {
     box-shadow: 0 0 3px var(--accent);
 }
 
-.practise .download {
+.practice .download {
     margin-inline: auto;
     background-color: var(--shadow);
     box-shadow: 0 0 1px var(--shadow);
@@ -117,7 +117,7 @@ footer div u:hover {
     cursor: pointer;
 }
 
-.practise .download:hover {
+.practice .download:hover {
     background-color: var(--accent);
     box-shadow: 0 0 3px var(--accent);
 }
