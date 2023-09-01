@@ -1,9 +1,9 @@
 import { State, createNode } from "@9elt/miniframe";
-import practiseCSS from "../../styles/practise.css";
+import practiceCSS from "../../styles/practice.css";
 import history from "../../util/history";
 
 
-export default async function renderPractiseSheet() {
+export default async function renderPracticeSheet() {
     await history.ok;
 
     const _ref = structuredClone(history.value);
@@ -24,7 +24,7 @@ export default async function renderPractiseSheet() {
 
     const style = {
         tagName: "style",
-        innerHTML: practiseCSS,
+        innerHTML: practiceCSS,
     };
 
     const body = () => ({
@@ -46,7 +46,7 @@ export default async function renderPractiseSheet() {
         children: [
             {
                 tagName: "h2",
-                children: ["Kanji Practise Sheet"]
+                children: ["Kanji Practice Sheet"]
             },
             {
                 tagName: "p",

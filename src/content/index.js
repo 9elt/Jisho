@@ -4,17 +4,17 @@ import gui from "./gui";
 import config from "../util/config";
 import history from "../util/history";
 import cache from "../util/cache";
-import renderPractiseSheet from "./practise";
+import renderPracticeSheet from "./practice";
 import { cycleKanji, listen } from "../util";
-import { PRACTISE_SHEET_URL } from "../util/consts";
+import { PRACTICE_SHEET_URL } from "../util/consts";
 
 
 listen("SYNC-CONFIG", config.sync);
 listen("SAVE-HISTORY", history.save);
 listen("CLEAR-HISTORY", history.clear);
 
-if (window.location.href === PRACTISE_SHEET_URL) {
-    renderPractiseSheet();
+if (window.location.href === PRACTICE_SHEET_URL) {
+    renderPracticeSheet();
 }
 
 window.onbeforeunload = () => { history.save() };
@@ -27,6 +27,7 @@ async function main() {
 
     useControls({
         onKanji: ({ selection }) => {
+            if (!selection) { return; }
             trail = cycleKanji(selection, trail);
             const target = trail.charAt(trail.length - 1);
             target ? getKanji(target)

@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Jisho On The Fly",
     "version": "1.1.0",
-    "description": "Unofficial Jisho.org extension, to look up word definitions and kanji info directly on the page",
+    "description": "Unofficial Jisho.org extension, to look up Japanese words and kanji on the fly",
     "permissions": [
         "storage",
         "contextMenus"

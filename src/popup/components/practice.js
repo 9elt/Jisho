@@ -1,16 +1,16 @@
-import { PRACTISE_SHEET_URL } from "../../util/consts";
+import { PRACTICE_SHEET_URL } from "../../util/consts";
 
 import history from "../../util/history";
 
 history.sync();
 
-const practise = history.as(history => ({
+const practice = history.as(history => ({
     tagName: "div",
     children:
         !history.length ? [
             {
                 tagName: "h4",
-                children: ["Kanji Practise"]
+                children: ["Kanji Practice"]
             },
             {
                 tagName: "p",
@@ -23,7 +23,7 @@ const practise = history.as(history => ({
         ] : history[0] === "WAITING" ? [] : [
             {
                 tagName: "h4",
-                children: ["Kanji Practise"]
+                children: ["Kanji Practice"]
             },
             {
                 tagName: "p",
@@ -36,7 +36,7 @@ const practise = history.as(history => ({
             },
             {
                 tagName: "div",
-                className: "practise",
+                className: "practice",
                 children: [
                     {
                         tagName: "div",
@@ -58,10 +58,10 @@ const practise = history.as(history => ({
                         className: "download",
                         children: [
                             "Generate  ",
-                            { tagName: "b", children: ["PRACTISE SHEET"] },
+                            { tagName: "b", children: ["PRACTICE SHEET"] },
                         ],
                         onclick: () => {
-                            window.open(PRACTISE_SHEET_URL, '_blank').focus();
+                            window.open(PRACTICE_SHEET_URL, '_blank').focus();
                         }
                     }
                 ]
@@ -83,4 +83,4 @@ function dashed(child) {
     }
 }
 
-export default practise;
+export default practice;
