@@ -5,7 +5,7 @@ import config from "../../util/config";
 import history from "../../util/history";
 
 
-const confirm = State.from(false);
+const confirm = new State(false);
 
 const clearHistoryButton = {
     tagName: "div",

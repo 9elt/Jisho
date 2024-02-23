@@ -60,7 +60,8 @@
 
 .kanji .info .heading a,
 .definition .info .word a,
-.kanji .jlpt {
+.kanji .jlpt,
+.kanji .grade {
     display: block;
     width: 90%;
     font-size: 18px;
@@ -74,10 +75,19 @@
     position: relative;
 }
 
-.kanji .jlpt {
+.kanji .jlpt,
+.kanji .grade {
     margin: 0;
     color: var(--color) !important;
     background-color: var(--bg);
+}
+
+.kanji .jlpt {
+    margin-top: -8px;
+}
+
+.kanji .grade {
+    margin-top: 8px;
 }
 
 /* readings and meanings */

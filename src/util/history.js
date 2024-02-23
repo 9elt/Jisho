@@ -29,10 +29,17 @@ import storage from "./storage";
 *     add: () => void;
 * }}
  */
-const history = State.from(["WAITING"]);
+const history = new State(["WAITING"]);
 
 history.ok = (async () => {
     history.value = await storage.get("history") ?? [];
+    history.value.forEach(e => e.strokes = e.strokes.map(s => ({
+        ...s,
+        namespaceURI: "http://www.w3.org/2000/svg",
+        children: s.children.map(c => ({
+            ...c, namespaceURI: "http://www.w3.org/2000/svg"
+        })),
+    })));
     if (history.value.length) {
         console.log(`kanji history restored (${sizeKB(history.value)} KB)`);
     }

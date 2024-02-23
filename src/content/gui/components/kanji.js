@@ -39,7 +39,7 @@ const kanji = (kanji, { onClose, history, onHistory }) => ({
     ]
 });
 
-const heading = ({ link, kanji, jlpt }) => ({
+const heading = ({ link, kanji, jlpt, grade }) => ({
     tagName: "div",
     className: "heading",
     children: [
@@ -57,6 +57,11 @@ const heading = ({ link, kanji, jlpt }) => ({
             tagName: "p",
             className: "jlpt",
             children: [jlpt],
+        },
+        {
+            tagName: "p",
+            className: "grade",
+            children: ["grade ", grade || "N/A"],
         },
     ]
 });

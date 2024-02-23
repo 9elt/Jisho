@@ -25,11 +25,13 @@ export default class Parser {
         page.innerHTML = html;
         const kanji = page.querySelector("h1.character")?.textContent ?? "";
         const jlpt = page.querySelector(".kanji_stats>.jlpt>strong")?.textContent ?? "N/A";
+        const grade = page.querySelector(".kanji_stats>.grade>strong")?.textContent?.replace('grade ', '') ?? "N/A";
         const meanings = page.querySelector(".kanji-details__main-meanings")?.textContent?.trim().split(",") ?? [];
         const readings = page.querySelectorAll(".kanji-details__main-readings-list");
         const kun = readings?.[0]?.textContent.trim().split("、 ") ?? [];
         const on = readings?.[1]?.textContent.trim().split("、 ") ?? [];
         const strokes = this.__strokes(svg);
+
         return {
             link,
             kanji,
@@ -37,6 +39,7 @@ export default class Parser {
             readings: { kun, on },
             strokes,
             jlpt,
+            grade,
         };
     }
     __strokes(svg) {
@@ -47,8 +50,13 @@ export default class Parser {
         const paths = [...svgElement.querySelectorAll("path")].map(path => path.getAttribute("d"));
         const base = {
             tagName: "svg",
+            namespaceURI: "http://www.w3.org/2000/svg",
             viewBox,
-            children: paths.map(d => ({ tagName: "path", d })),
+            children: paths.map(d => ({
+                tagName: "path",
+                namespaceURI: "http://www.w3.org/2000/svg",
+                d,
+            })),
         }
         return paths.map((d, i) => {
             const curr = structuredClone(base);
@@ -60,6 +68,7 @@ export default class Parser {
             if (sp.x && sp.y) {
                 curr.children.push({
                     tagName: "circle", cx: sp.x, cy: sp.y, r: "5",
+                    namespaceURI: "http://www.w3.org/2000/svg",
                 });
             }
             return curr;

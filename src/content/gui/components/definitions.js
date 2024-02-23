@@ -1,7 +1,7 @@
 import { State } from "@9elt/miniframe";
 
 const definitions = (definitions, { onClose }) => {
-    const current = State.from(0);
+    const current = new State(0);
     const definition = current.as(curr => definitions[curr]);
 
     return {

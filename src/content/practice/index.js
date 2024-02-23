@@ -9,18 +9,18 @@ export default async function renderPracticeSheet() {
     const _ref = structuredClone(history.value);
     const _order_init = history.value.map(flatten);
 
-    const order = State.from("");
+    const order = new State("");
 
     const available = order.as(str => _ref.sort(sortAs(str || _order_init)));
 
-    const hidden = State.from("");
+    const hidden = new State("");
 
     const active = State.use({
         a: available,
         h: hidden
     }).as(({ a, h }) => !h ? a : a.filter(k => !h.includes(k.kanji)));
 
-    const printRefText = State.from(true);
+    const printRefText = new State(true);
 
     const style = {
         tagName: "style",

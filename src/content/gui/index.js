@@ -11,8 +11,8 @@ import definitions from "./components/definitions";
 import error from "./components/error";
 
 
-const active = State.from(false);
-const current = State.from(loader);
+const active = new State(false);
+const current = new State(loader);
 
 const style = {
     tagName: "style",

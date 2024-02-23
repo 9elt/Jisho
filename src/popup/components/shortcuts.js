@@ -29,7 +29,7 @@ const shortcuts = {
 };
 
 function shortcut(action, keys) {
-    const active = State.from(false);
+    const active = new State(false);
     const display = active.as(v => v ? display.value = "Recording..." : formatKeys(keys));
 
     function record() {
