@@ -61,7 +61,7 @@ const heading = ({ link, kanji, jlpt, grade }) => ({
         {
             tagName: "p",
             className: "grade",
-            children: ["grade ", grade],
+            children: ["grade ", grade || "N/A"],
         },
     ]
 });
