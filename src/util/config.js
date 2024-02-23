@@ -15,7 +15,7 @@ import { SYSTEM_COLOR_SCHEME, DEFAULT_SHORTCUTS } from "./consts";
  *     sync: () => Promise<boolean>;
  * }} 
  */
-const config = State.from({});
+const config = new State({});
 
 config.sync = async () => {
     config.value = {
